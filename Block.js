@@ -12,21 +12,35 @@ class Block {
         this.prevhash = prevhash;
         this.hash = this.getHash();
 
+
     }
 
     getHash() {
+        let count = 0;
         let newHash;
-        let count;
+        let last = Date.now()
         for (let i = 0; i < 1000000000000; i++) {
-            let data = this.prevhash + Date.now();
-            newHash = md5(data);
-            console.log(newHash);
-            if (condition.test(newHash)) {
-                break;
-                }
+            let data = this.prevhash + i
+            count++;
 
-         }
-         return newHash;
+            if (Date.now() - last > 2000) {
+                last = Date.now();
+                console.clear();
+                console.log("total cal", count);
+                count = 0;
+            }
+            newHash = md5(data);
+            if (condition.test(newHash)) {
+                console.log(newHash);
+
+                console.log("i: " + i);
+                break;
+
+            }
+
+        }
+
+        return newHash;
     }
 }
 

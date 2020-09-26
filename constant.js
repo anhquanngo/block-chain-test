@@ -1,4 +1,4 @@
 module.exports = {
-    condition: /^abc/i,
+    condition: /^abc4ud/i,
     initBlock: 'hello blockchain'
 }
