@@ -1,10 +1,28 @@
 {
-  "name": "BlockChain",
+  "name": "blockchain",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
     "md5": "^2.3.0",
+    "nodemon": "^2.0.4",
     "socket.io": "^2.3.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhquanngo/block-chain-test.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/anhquanngo/block-chain-test/issues"
+  },
+  "homepage": "https://github.com/anhquanngo/block-chain-test#readme",
+  "description": ""
 }

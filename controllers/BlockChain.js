@@ -1,4 +1,3 @@
-const md5 = require('md5');
 const { initBlock, condition } = require('./constant');
 const Block = require('./Block');
 
@@ -6,10 +5,12 @@ class BlockChain {
     constructor() {
         this.chain = [this.initChain()];
     }
+
     initChain() {
-        let newBlock = new Block(initBlock);
+        let newBlock = new Block(initBlock, 0);
         return newBlock;
     }
+
     addNewBlock(newBlock) {
         let checkNewBlock = this.validBlock(newBlock);
         if (checkNewBlock) {
@@ -28,18 +29,8 @@ class BlockChain {
     }
 }
 
-let blockChain = new BlockChain();
-let chain = blockChain.chain;
 
-let prevhash = chain[chain.length - 1].hash;
-
-let newBlock = new Block(prevhash);
-
-console.log(newBlock);
-
-blockChain.addNewBlock(newBlock);
-
-console.log(blockChain);
+module.exports = BlockChain
 
 
 
